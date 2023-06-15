@@ -16,11 +16,13 @@
 
     <!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-        type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -43,10 +45,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#contact">Help</a>
-                    </li>
+                        <button class="button btn btn-outline-primary mr-4" data-modal="modalOne" >Contact</button>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <button class="button btn btn-outline-primary mr-4" data-modal="modalTwo" >Help</button>
                     </li>
                 </ul>
             </div>
@@ -55,6 +56,77 @@
         <!-- /.container -->
     </nav>
 
+
+    <div id="modalOne" class="modal">
+        <div class="modal-content">
+          <div class="contact-form">
+            <span style="font-size: 50px;" class="close">&times;</span><br>
+            <form action="">
+            <h4 style="text-align: center;width: 100%;" class="bg-primary"><u>Hire Me</u></h4>
+            <p>You can reach me through a Call, Email, WhatsApp or Telegram <br>
+                The ICONS will direct you to all these
+            </p>
+                <table id="zero_config" class="table table-striped no-wrap">
+                    <thead>
+                        <tr style="color: black;">
+                            <tr style="color: black;">
+                                <th>Call Me</th>
+                                <td><a style="font-size: 20px;" href="tel:0792613079"><i class="fa fa-phone"></i></a></td>
+                            </tr>
+                            <tr style="color: black;">
+                                <th>Email Me</th>
+                                <td><a style="font-size: 20px;" href="mailto:kimonesmuske@gmail.com"><i class="fa fa-envelope"></i></a></td>
+                            </tr>
+                            <tr style="color: black;">
+                                <th>WhatsApp Me</th>
+                                <td><a style="font-size: 20px;" href="https://wa.link/vctkyy"><i class="fab fa-whatsapp"></i></a></td>
+                            </tr>
+                            <tr style="color: black;">
+                                <th>Telegram</th>
+                                <td><a style="font-size: 20px;" href="https://t.me/Onesmus Kimanzi"><i class="fab fa-telegram"></i></a></td>
+                            </tr>
+                        </tr>
+                    </thead>
+                </table>
+            </form>
+          </div>
+        </div>
+    </div>
+    <div id="modalTwo" class="modal">
+        <div class="modal-content">
+          <div class="contact-form">
+            <span style="font-size: 50px;" class="close">&times;</span><br>
+            <form method="post" class="text-dark" action="">
+                {% csrf_token %}
+                <h4 style="text-align: center;width: 100%;" class="bg-primary"><u>Buy Me Coffee</u></h4>
+                <p> <span style="font-size: 20px;color:red;">Note: </span>I have used M-Pesa credentials to initiate STK-Push <br>
+                    Once my Business Short Code is out i will Update <br>
+                    Use M-Pesa send money<span class="blink" style="font-size: 20px;color:dodgerblue;animation: blinker 1s linear infinite;">
+                         0792613079</span> to buy me Coffee.
+                </p>
+                <table id="zero_config" class="table table-striped no-wrap text-dark">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="text-dark" for="uname">Phone Number (2547....)</label>
+                            <input class="form-control" id="uname" type="number" name="number"
+                                placeholder="Enter your phone number" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="text-dark" for="pwd">Amount</label>
+                            <input class="form-control" id="pwd" type="number" name="amount"
+                                placeholder="Enter Amount" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 text-center">
+                        <button type="submit" class="btn btn-block btn-dark">Submit</button>
+                    </div>
+                </table>
+            </form>
+          </div>
+        </div>
+    </div>
 
     <!-- Header -->
     <a name="about"></a>
@@ -151,12 +223,10 @@
         <div class="container">
 
             <div class="row">
-                <div style="margin: 30px;" class="col-lg-5 col-sm-6">
+                <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 style="text-align: center;" class="section-heading">School Gallery</h2>
-                    <div id="slider">
-                        <ul id="slideWrap">
                             <li><img src="img/image.jpg" alt=""></li>
                             <li><img src="img/intro-bg.jpg" alt=""></li>
                         </ul>
@@ -164,7 +234,7 @@
                         <button style="color: darkcyan;font-size: 30px;" id="next" onclick="nextSlide">&#8811;</button>
                     </div>
                 </div>
-                <div style="margin: 30px;" class="col-lg-5 col-sm-6">
+                <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 style="text-align: center;" class="section-heading">Church Gallery</h2>
@@ -293,6 +363,33 @@
             responsiveSlider();
         }
 
+    </script>
+    <script>
+        let modalBtns = [...document.querySelectorAll(".button")];
+        modalBtns.forEach(function (btn) {
+          btn.onclick = function () {
+            let modal = btn.getAttribute("data-modal");
+            document.getElementById(modal).style.display = "block";
+          };
+        });
+        let closeBtns = [...document.querySelectorAll(".close")];
+        closeBtns.forEach(function (btn) {
+          btn.onclick = function () {
+            let modal = btn.closest(".modal");
+            modal.style.display = "none";
+          };
+        });
+        window.onclick = function (event) {
+          if (event.target.className === "modal") {
+            event.target.style.display = "none";
+          }
+        };
+    </script>
+    <script>
+        var message_ele = document.getElementById("floating");
+        setTimeout(function() {
+            message_ele.style.display = "none"
+        }, 30000);
     </script>
 
 </body>
