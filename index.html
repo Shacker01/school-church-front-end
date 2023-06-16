@@ -24,6 +24,17 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .blink {
+            animation: blinker 3s step-start infinite;
+          }
+          
+          @keyframes blinker {
+            50% {
+              opacity: 0;
+            }
+          }
+    </style>
 </head>
 
 <body>
@@ -61,7 +72,7 @@
     <div style="margin-top: 60px;" id="modalOne" class="modal">
         <div class="modal-content">
             <div class="contact-form">
-                <span style="font-size: 50px; color: red;" class="close">&times;</span><br>
+                <span style="font-size: 50px; color: red;" class="close">&times;</span><br><br>
                 <form action="">
                     <h4 style="text-align: center;width: 100%;" class="bg-primary"><u>Contact Us Through</u></h4>
                     <p>You can reach us through a Call, Email, WhatsApp or Telegram <br>
@@ -100,15 +111,15 @@
     <div style="margin-top: 70px;" id="modalTwo" class="modal">
         <div class="modal-content">
             <div class="contact-form">
-                <span style="font-size: 50px; color: red;" class="close">&times;</span><br>
+                <span style="font-size: 50px; color: red;" class="close">&times;</span><br><br>
                 <form method="post" class="text-dark" action="">
                     <!-- {% csrf_token %} -->
                     <h4 style="text-align: center;width: 100%;" class="bg-primary"><u>Help Line</u></h4>
                     <p>
                         Our help line is: <span class="blink"
                             style="font-size: 20px;color:dodgerblue;animation: blinker 1s linear infinite;">
-                            0792613079
-                        </span>
+                            0792613079 <br></span>
+                            To make a call click <a style="font-size: 20px;" href="tel:0792613079">0792613079</i></a>
                     </p>
                     <table id="zero_config" class="table table-striped no-wrap text-dark">
                     </table>
@@ -206,13 +217,45 @@
 
         </div>
     </div>
+    <section id="imgages-carousel">
+        <div class="img-carousel-container">
+               <div class="img-carousel">
+                   <div>
+                   <img src="https://source.unsplash.com/9Nok_iZEgLk/800x450">
+                       <p>1/6</p>
+                   </div>
+                   <div>
+                   <img src="https://source.unsplash.com/4v7ubW7jz1Q/800x450"> 
+                       <p>2/6</p>
+                   </div>
+                   <div>
+                   <img src="https://source.unsplash.com/rtCujH697DU/800x450"> 
+                       <p>3/6</p>
+                   </div>
+                   <div>
+                   <img src="https://source.unsplash.com/ELv8fvulR0g/800x450"> 
+                       <p>4/6</p>
+                   </div>
+                   <div>
+                   <img src="https://source.unsplash.com/LoPGu6By90k/800x450"> 
+                       <p>5/6</p>
+                   </div>
+                   <div>
+                   <img src="https://source.unsplash.com/Ndz3w6MCeWc/800x450">
+                       <p>6/6</p>
+                   </div>
+               </div>
+               <button id="prev"><i class="fas fa-chevron-left fa-2x"></i></button>
+               <button id="next"><i class="fas fa-chevron-right fa-2x"></i></button> 
+           </div>        
+   </section> 
 
     <div class="content-section-a">
 
         <div class="container">
 
             <div class="row">
-                <div style="margin: 30px;" class="col-lg-5 col-sm-6">
+                <!-- <div style="margin: 30px;" class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 style="text-align: center;" class="section-heading">Our Gallery</h2>
@@ -225,7 +268,7 @@
                         <button style="color: darkcyan;font-size: 30px;" id="prev" onclick="prevSlide">&#8810;</button>
                         <button style="color: darkcyan;font-size: 30px;" id="next" onclick="nextSlide">&#8811;</button>
                     </div>
-                </div>
+                </div> -->
                 <!-- <div style="margin: 30px;" class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
@@ -293,7 +336,7 @@
         </div><br><br><br><br>
         <p style="text-align: center;font-size: 20px;padding-bottom: 0%;margin-bottom: 0%;">Copyright &copy; 2023. All
             Rights Reserved.
-            <span>Designed and Developed by <a href="">KimTech</a></span>
+            <span>Designed and Developed by <a style="color: red;" href="onesmuskimanzi.pythonanywhere.com">KimTech</a></span>
         </p>
     </div>
     <script src="js/jquery.js"></script>
